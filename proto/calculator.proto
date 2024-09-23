@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package calculator;
+
+option go_package = "./;rpcbuffer"; 
+
+service CalcService {
+    rpc Calculate (calcRequest) returns (calcResponse) {}
+}
+
+message calcRequest {
+    double a = 1;
+    double b = 2;
+    string opt = 3;
+}
+
+message calcResponse {
+    double result = 1;
+}
